@@ -1,0 +1,31 @@
+.foodGallery{
+	width: 100%;
+}
+
+.gallery-block{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.gallery-block li{
+	display: flex;
+	flex-direction: row;
+	width: 25%;
+	height: auto;
+}
+
+.gallery-block li figure{
+	overflow: hidden;
+}
+
+.gallery-block li img{
+	width: 100%;
+	opacity: 0.8;
+}
+
+.gallery-block li figure img:hover{
+  transform: scale(1.15);
+  transition: transform 0.5s;
+  opacity: 1;
+}

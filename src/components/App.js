@@ -1,10 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+
+import LandingPage from './landingPage/landingPage';
+
+import '../styles/app.css'
+import Layout from './hoc/layout/layout';
+import Aux from './hoc/aux';
+
+
 
 class App extends Component {
     render(){
-        return <div>
-            <h1>My React App</h1>
-        </div>
+		return <Aux>
+			<Layout>
+				<LandingPage />
+			</Layout>
+        </Aux>
     }
 }
 

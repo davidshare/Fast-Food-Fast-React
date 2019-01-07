@@ -1,0 +1,53 @@
+.about {
+	display: flex;
+	width: 100%;
+	overflow: hidden;
+}
+
+.about .about-image{
+	width: 60%;
+	background-color: #000;
+}
+
+.about .about-image img {
+	width: 100%;
+	height: 100%;
+}
+
+.about .about-text {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 40%;
+	padding: 50px;
+	color: #1d1d20;
+}
+
+.about-title{
+	text-transform: uppercase;
+	font-size: 2em;
+	margin-bottom: 30px;
+}
+
+.about-content{
+	margin: 10px 0;
+	font-size: 1.1em;
+}
+
+@media only screen and (max-width: 600px) {
+	.about{
+		flex-flow: column;
+	}
+
+	.about-image{
+		display: block !important;
+		width: 100% !important;
+	}
+
+	.about-text{
+		display: block;
+		width: 100% !important;
+	}
+}

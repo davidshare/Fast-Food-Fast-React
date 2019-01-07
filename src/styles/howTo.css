@@ -1,0 +1,26 @@
+.howto{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url('../assets/images/meal6.jpg');
+	background-size: cover;
+	padding: 50px;
+}
+
+.howto h1{
+	text-align: center;
+	color: #fff;
+	margin: 20px 0;
+}
+
+.howto-list{
+	padding-left: 40px;
+	background: transparent;
+	clear: both;
+	color: #fff;
+}
+
+.howto-list li{
+  width: 40%;
+  float: left;
+  margin-left: 40px;
+	padding-left: 15px;
+}
+
