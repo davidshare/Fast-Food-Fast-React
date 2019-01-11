@@ -1,0 +1,27 @@
+.navList{
+	list-style-type: none;
+}
+
+.navList li{
+	display: inline;
+	margin: 0 15px;
+}
+
+.navList li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.navList a:visited{
+	color: #fff;
+}
+
+@media (max-width: 700px){
+	.navList li{
+		display: block;
+	}
+
+	.main-nav{
+		display: none;
+	}
+}
