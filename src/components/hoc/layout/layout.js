@@ -2,6 +2,7 @@ import React from 'react';
 
 import Aux from '../aux';
 import Nav from '../../nav/nav';
+import Login from '../../auth/signin';
 
 const layout = props => (
   <Aux>

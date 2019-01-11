@@ -10,7 +10,7 @@ const navList = props => (
     <li><Link to="meals.html">Meals</Link></li>
     <li><Link to="order_history.html">Order History</Link></li>
     <li><Link to="signup.html">Signup</Link></li>
-    <li><Link to="signin.html">Signin</Link></li>
+    <li><Link to="/signin">Signin</Link></li>
     <li><Link to="#" onClick={props.logout}>Signout</Link></li>
     <li>
       <Link to="cart.html">
