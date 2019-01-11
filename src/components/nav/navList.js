@@ -1,20 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../../styles/navList.css';
 
 const navList = (props) => (
 	<ul className="navList">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="meals.html">Meals</a></li>
-    <li><a href="order_history.html">Order History</a></li>
-    <li><a href="signup.html">Signup</a></li>
-    <li><a href="signin.html">Signin</a></li>
-    <li><a href="#" onClick={props.logout}>Signout</a></li>
+    <li><Link to="/">Home</Link></li>
+    <li><Link  to="#about">About</Link></li>
+    <li><Link to="meals.html">Meals</Link></li>
+    <li><Link to="order_history.html">Order History</Link></li>
+    <li><Link to="signup.html">Signup</Link></li>
+    <li><Link to="signin.html">Signin</Link></li>
+    <li><Link to="#" onClick={props.logout}>Signout</Link></li>
     <li>
-      <a href="cart.html">
+      <Link to="cart.html">
         cart icon
-			</a>
+			</Link>
 		</li>
   </ul>
 );
