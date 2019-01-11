@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import LandingPage from './landingPage/landingPage';
-
 import '../styles/app.css'
-import Layout from './hoc/layout/layout';
 import Aux from './hoc/aux';
 
 
@@ -11,9 +10,11 @@ import Aux from './hoc/aux';
 class App extends Component {
     render(){
 		return <Aux>
-			<Layout>
-				<LandingPage />
-			</Layout>
+			<BrowserRouter>
+				<Switch>
+					<Route exact path='/' component={LandingPage}/>
+				</Switch>
+			</BrowserRouter>
         </Aux>
     }
 }
