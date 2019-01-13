@@ -1,5 +1,7 @@
 # Fast-Food-Fast - Frontend using react.js
 [![Build Status](https://travis-ci.org/davidshare/Fast-Food-Fast-React.svg?branch=develop)](https://travis-ci.org/davidshare/Fast-Food-Fast-React)
+[![Maintainability](https://api.codeclimate.com/v1/badges/20a424b4b4eae141ebea/maintainability)](https://codeclimate.com/github/davidshare/Fast-Food-Fast-React/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/20a424b4b4eae141ebea/test_coverage)](https://codeclimate.com/github/davidshare/Fast-Food-Fast-React/test_coverage)
 
 Fast-Food-Fast is a food delivery service app for a restaurant. A user can create an account, signin to the account and make orders for food items. It consumes the Fast-Food-Fast api on https://github.com/davidshare/Fast-Food-Fast.
 
