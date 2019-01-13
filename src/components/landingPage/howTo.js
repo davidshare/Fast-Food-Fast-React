@@ -3,7 +3,7 @@ import React from 'react';
 import '../../styles/howTo.css';
 
 const howTo = () => (
-	<section className="howto" id="howto">
+  <section className="howto" id="howto">
     <h1>How to order</h1>
       <ol className="howto-list clearfix">
         <li>Signup to create an account</li>
