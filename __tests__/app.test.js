@@ -7,8 +7,8 @@ describe('App component', () => {
     expect(App).toBeDefined();
   });
 
-  it('should render a <div />', () => {
+  it('should render a higher order component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find('div').length).toEqual(1);
+    expect(wrapper.find('aux').length).toEqual(1);
   });
 });
