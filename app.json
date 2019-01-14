@@ -1,0 +1,16 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "env": {
+  },
+  "formation": {
+  },
+  "name": "Fast-Food-Fast-React",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
