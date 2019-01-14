@@ -7,7 +7,7 @@ import '../../../styles/foodGallery.css';
 const generateImageList = () => {
   const imageList = [];
   for (let i = 7; i <= 14; i++) {
-    const imagePath = `../../../src/assets/images/meal${i}.jpg`;
+    const imagePath = `../../../assets/images/meal${i}.jpg`;
     imageList.push(
       <li key={`image${i}`}><GalleryImage image={imagePath}/></li>,
     );
