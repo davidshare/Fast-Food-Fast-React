@@ -1,33 +1,38 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 import AuthContainer from '../../containers/authContainer';
 import '../../styles/authForms.css';
 import lockIcon from '../../assets/icons/lock.svg';
 import envelopeIcon from '../../assets/icons/envelope.svg';
-import signinUser from '../../actions/siginActions';
 
 /**
- * @description this is the class component for user signin
+ * @class Signup
+ * @extends {Component}
  */
-class Signin extends Component {
-  /**
-   * @description - checks if the component has mounted and performs actions
-   * @returns {undefined}
-   */
-  signinHandler() {
-    this.props.signinUser();
+class Signup extends Component {
+  state = {
+    email: '',
+    password: '',
   }
 
-  /**
+/**
+ * @memberof Signup
+ * @description - method to handle user click for signup
+ * @param { object } event - the event object
+ * @returns { null } - returns nothing
+ */
+signupHandler = (event) => {
+  event.preventDefault();
+}
+
+/**
    * @description method that renders the signin componentDidMount = () => {
    * @returns { JSX } Jsx for login component
   * */
-  render() {
-    return (
+render() {
+  return (
       <AuthContainer imgBackground="signinBackground">
-    <form className="authForm signinForm" onSubmit={this.props.signinUser} >
+    <form className="authForm signinForm" onSubmit={this.signupHandler} >
       <div className="formTitle">
         <h2>Fast Food Fast</h2>
         <p>Signin quickly! We have a surprise for you.</p>
@@ -40,7 +45,7 @@ class Signin extends Component {
           type="text"
           name="email"
           placeholder="Email"
-          value={this.props.email}
+          value={this.state.email}
         />
 
       </div>
@@ -53,7 +58,7 @@ class Signin extends Component {
           type="password"
           name="password"
           placeholder="Password"
-          value={this.props.password}
+          value={this.state.password}
         />
       </div>
       <div className="formBtn">
@@ -66,23 +71,9 @@ class Signin extends Component {
       </div>
     </form>
   </AuthContainer>
-    );
-  }
+  );
+}
 }
 
-Signin.propTypes = {
-  email: PropTypes.sting.isRequired,
-  password: PropTypes.string.isRequired,
-  signinUser: PropTypes.func.isRequired,
-};
 
-const mapStateToProps = state => ({
-  email: state.signin.email,
-  password: state.signin.password,
-});
-
-const mapDispatchToProps = {
-  signinUser,
-};
-
-export default connect(mapStateToProps, {})(Signin);
+export default Signup;
