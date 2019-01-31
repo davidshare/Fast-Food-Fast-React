@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Aux from '../aux';
 import Nav from '../../nav/nav';
 
-const layout = props => (
+const Layout = props => (
   <Aux>
     <div>
       <Nav/>
@@ -14,4 +15,8 @@ const layout = props => (
   </Aux>
 );
 
-export default layout;
+Layout.propTypes = {
+  children: PropTypes.any,
+};
+
+export default Layout;

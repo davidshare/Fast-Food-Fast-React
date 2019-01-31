@@ -1,0 +1,70 @@
+.authForm{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.signinForm{
+	background-color: #fff;
+	padding: 50px 30px;
+	border-radius: 5px;
+	color: #343A40;
+}
+
+.signinForm .formTitle{
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.signinForm .formControl{
+	width: 350px;
+	background: #fff;
+	display: inherit;
+	justify-content: center;
+	align-items: center;
+	padding: 2px 0;
+	border: solid 1px #d3d3d3;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.signinForm .formControl:nth-child(1){
+	margin-bottom: 50px;
+}
+
+.formControl input{
+	font-size: 1em;
+	padding: 15px;
+	width: 80%;
+	border: 0;
+}
+
+.formControl img{
+	width: 15px;
+}
+
+.signinForm .formBtn{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.signinForm .formControl input:focus{
+	outline: none;
+}
+
+.signinForm .formBtn button{
+	width: 100%;
+	background: #C12302;
+	color: #fff;
+	margin-top: 20px;
+	font-size: 1em;
+	padding: 12px;
+	border: 0;
+	border-radius: 10px;
+}
+
+.signinForm .formText, .signinForm p{
+	font-size: 0.8em;
+}
