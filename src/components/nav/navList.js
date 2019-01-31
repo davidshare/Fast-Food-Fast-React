@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import '../../styles/navList.css';
 
@@ -9,7 +10,7 @@ const navList = props => (
     <li><Link to="#about">About</Link></li>
     <li><Link to="meals.html">Meals</Link></li>
     <li><Link to="order_history.html">Order History</Link></li>
-    <li><Link to="signup.html">Signup</Link></li>
+    <li><Link to="signup">Signup</Link></li>
     <li><Link to="/signin">Signin</Link></li>
     <li><Link to="#" onClick={props.logout}>Signout</Link></li>
     <li>
@@ -19,5 +20,9 @@ const navList = props => (
     </li>
   </ul>
 );
+
+navList.propTypes = {
+  logout: PropTypes.func,
+};
 
 export default navList;

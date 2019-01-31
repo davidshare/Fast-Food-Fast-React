@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { ToastProvider } from 'react-toast-notifications';
 
 import LandingPage from './landingPage/landingPage';
 import '../styles/app.css';
 import Aux from './hoc/aux';
 import store from '../store/store';
-import Signup from './auth/Signup';
+import Signup from '../containers/authContainers/signupContainer';
 
 /**
  * @descrption The App class component for rendering the app
@@ -19,14 +20,16 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
+        <ToastProvider>
         <Aux>
-          <BrowserRouter>
-            <Switch>
-              <Route exact path='/' component={LandingPage}/>
-              <Route exact path='/signup' component={Signup}/>
-            </Switch>
-          </BrowserRouter>
-        </Aux>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path='/' component={LandingPage}/>
+            <Route exact path='/signup' component={Signup}/>
+          </Switch>
+        </BrowserRouter>
+      </Aux>
+        </ToastProvider>
       </Provider>
     );
   }
