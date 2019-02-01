@@ -8,6 +8,12 @@
 
 .signinBackground{
 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(../assets/images/meal6.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-/* ,  */
+.signupBackground{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(../assets/images/meal2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}

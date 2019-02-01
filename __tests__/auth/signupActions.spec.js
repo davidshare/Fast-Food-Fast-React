@@ -17,7 +17,7 @@ const fakeUserObject = {
 const mockResponse = {
   response: {
     response: {
-      data: { message: 'Sorry could not create article' },
+      data: { message: 'some response' },
     },
   },
 };
