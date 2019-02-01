@@ -7,6 +7,7 @@ import LandingPage from './landingPage/landingPage';
 import '../styles/app.css';
 import Aux from './hoc/aux';
 import store from '../store/store';
+import Signin from '../containers/authContainers/SigninContainer';
 import Signup from '../containers/authContainers/signupContainer';
 
 /**
@@ -26,6 +27,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={LandingPage}/>
             <Route exact path='/signup' component={Signup}/>
+            <Route exact path='/signin' component={Signin}/>
           </Switch>
         </BrowserRouter>
       </Aux>

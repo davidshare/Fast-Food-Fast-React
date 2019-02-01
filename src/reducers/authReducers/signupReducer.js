@@ -31,8 +31,8 @@ export const signupFailureReducer = (
 ) => stateUpdateHelper(state, {
   signupProcessing: false,
   signupError: true,
-  signupSuccess: true,
-  response: action.payload,
+  signupSuccess: false,
+  signupResponse: action.payload,
 });
 
 /**

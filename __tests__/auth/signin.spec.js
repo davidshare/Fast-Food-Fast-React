@@ -1,16 +1,16 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { Signup } from '../../src/components/auth/Signup';
+import { Signin } from '../../src/components/auth/Signin';
 
-describe('Signup Component', () => {
+describe('Signin Component', () => {
   const spy = jest.fn();
   const props = {
     toastManager: {
       add: jest.fn(),
     },
-    signupError: false,
-    signupSuccess: false,
-    signupUser: spy,
+    signinError: false,
+    signinSuccess: false,
+    signinUser: spy,
   };
   const event = {
     preventDefault: jest.fn(),
@@ -19,39 +19,25 @@ describe('Signup Component', () => {
       value: 'datavalues',
     },
   };
-  const wrapper = shallow(<Signup {...props}/>);
+  const wrapper = shallow(<Signin {...props}/>);
 
-  it('should render the signup form', () => {
-    const container = wrapper.find('#signupForm');
+  it('should render the signin form', () => {
+    const container = wrapper.find('#signinForm');
     expect(container.length).toEqual(1);
-  });
-
-  it('should change state if firstname field is changed', () => {
-    event.target.name = 'firstname';
-    const input = wrapper.find('input');
-    input.at(0).simulate('change', event);
-    expect(wrapper.state().firstName).toEqual(event.target.value);
-  });
-
-  it('should change state if lastname field is changed', () => {
-    event.target.name = 'lastname';
-    const input = wrapper.find('input');
-    input.at(1).simulate('change', event);
-    expect(wrapper.state().lastName).toEqual(event.target.value);
   });
 
   it('should change state if email field is changed', () => {
     event.target.name = 'email';
     event.target.value = 'davidshare@gmail.com';
     const input = wrapper.find('input');
-    input.at(2).simulate('change', event);
+    input.at(0).simulate('change', event);
     expect(wrapper.state().email).toEqual(event.target.value);
   });
 
   it('should change state if password field is changed', () => {
     event.target.name = 'password';
     const input = wrapper.find('input');
-    input.at(3).simulate('change', event);
+    input.at(1).simulate('change', event);
     expect(wrapper.state().password).toEqual(event.target.value);
   });
 
@@ -64,7 +50,7 @@ describe('Signup Component', () => {
   it('should display response messages', () => {
     const nextProps = {
       ...props,
-      signupError: true,
+      signinError: true,
     };
     wrapper.instance().shouldComponentUpdate(nextProps);
   });
@@ -72,14 +58,14 @@ describe('Signup Component', () => {
   it('should display response messages', () => {
     const nextProps = {
       ...props,
-      signupSuccess: true,
+      signinSuccess: true,
     };
     wrapper.instance().shouldComponentUpdate(nextProps);
   });
 
   it('should signup the user on submit', () => {
-    const signupForm = wrapper.find('form');
-    signupForm.simulate('submit', event);
-    expect(wrapper.instance().props.signupUser).toHaveBeenCalled();
+    const signinForm = wrapper.find('form');
+    signinForm.simulate('submit', event);
+    expect(wrapper.instance().props.signinUser).toHaveBeenCalled();
   });
 });

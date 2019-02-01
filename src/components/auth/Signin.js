@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ClipLoader from 'react-spinners/ClipLoader';
 import { withToastManager } from 'react-toast-notifications';
 import { Link } from 'react-router-dom';
 
@@ -8,67 +7,56 @@ import AuthContainer from '../hoc/AuthContainer';
 import '../../styles/authForms.css';
 import lockIcon from '../../assets/icons/lock.svg';
 import envelopeIcon from '../../assets/icons/envelope.svg';
-import userIcon from '../../assets/icons/user-silhouette.svg';
 import {
-  SIGNUP_SUCCESS_MSG,
-  SIGNUP_ERROR_MSG,
+  SIGNIN_ERROR_MSG,
+  SIGNIN_SUCCESS_MSG,
   toastSuccessObj,
   toastErrorObj,
 } from '../../helpers/constants';
 
 /**
- * @class Signup
+ * @class Signin
  * @extends {Component}
  */
-export class Signup extends Component {
+export class Signin extends Component {
   state = {
     email: '',
     password: '',
-    firstName: '',
-    lastName: '',
   }
 
   static propTypes = {
-    signupUser: PropTypes.func,
+    signinUser: PropTypes.func,
     history: PropTypes.object,
-    signupProcessing: PropTypes.bool,
+    signinProcessing: PropTypes.bool,
     toastManager: PropTypes.object.isRequired,
-    signupError: PropTypes.bool.isRequired,
-    signupSuccess: PropTypes.bool.isRequired,
+    signinError: PropTypes.bool.isRequired,
+    signinSuccess: PropTypes.bool.isRequired,
   }
 
 /**
- * @memberof Signup
- * @description - method to handle user click for signup
+ * @memberof Signin
+ * @description - method to handle user click for signin
  * @param { object } event - the event object
  * @returns { null } - returns nothing
  */
-signupHandler = (event) => {
+signinHandler = (event) => {
   event.preventDefault();
   const userObject = {
-    firstName: this.state.firstName,
-    lastName: this.state.lastName,
     email: this.state.email,
     password: this.state.password,
   };
-  this.props.signupUser(userObject, this.props.history);
+  this.props.signinUser(userObject, this.props.history);
 }
 
 /**
  * @description - method to handle change of input fields
  * @param { object} event - the event object
- * @memberof Signup
+ * @memberof Signin
  * @returns { undefined }
  */
 onInputFieldChangeHandler = (event) => {
   event.preventDefault();
   switch (event.target.name) {
-    case 'firstname':
-      this.setState({ firstName: event.target.value });
-      break;
-    case 'lastname':
-      this.setState({ lastName: event.target.value });
-      break;
     case 'email':
       this.setState({ email: event.target.value });
       break;
@@ -84,17 +72,17 @@ onInputFieldChangeHandler = (event) => {
 /**
  * @param { object } nextProps
  * @returns { boolean } true
- * @memberof Signup
+ * @memberof Signin
  */
 shouldComponentUpdate(nextProps) {
-  if (this.props.signupError !== nextProps.signupError
-    && nextProps.signupError === true) {
-    this.props.toastManager.add(SIGNUP_ERROR_MSG, toastErrorObj);
+  if (this.props.signinError !== nextProps.signinError
+    && nextProps.signinError === true) {
+    this.props.toastManager.add(SIGNIN_ERROR_MSG, toastErrorObj);
   }
 
-  if (this.props.signupSuccess !== nextProps.signupSuccess
-    && nextProps.signupSuccess === true) {
-    this.props.toastManager.add(SIGNUP_SUCCESS_MSG, toastSuccessObj);
+  if (this.props.signinSuccess !== nextProps.signinSuccess
+    && nextProps.signinSuccess === true) {
+    this.props.toastManager.add(SIGNIN_SUCCESS_MSG, toastSuccessObj);
   }
 
   return true;
@@ -106,43 +94,15 @@ shouldComponentUpdate(nextProps) {
   * */
 render() {
   return (
-      <AuthContainer imgBackground="signupBackground">
+      <AuthContainer imgBackground="signinBackground">
     <form
-      className="authForm signupForm"
-      onSubmit={this.signupHandler}
-      id="signupForm"
+      className="authForm signinForm"
+      onSubmit={this.signinHandler}
+      id="signinForm"
     >
       <div className="formTitle">
-        <h2><Link to="/">Fast Food Fast</Link></h2>
+      <h2><Link to="/">Fast Food Fast</Link></h2>
         <p>You can't go hungry when we've got you covered</p>
-      </div>
-      <div className="formControl">
-        <span className="form-icon">
-          <img src={userIcon} alt="email icon" />
-        </span>
-        <input
-          type="text"
-          name="firstname"
-          placeholder="Firstname"
-          value={this.state.firstName}
-          onChange={this.onInputFieldChangeHandler}
-          required
-        />
-
-      </div>
-      <div className="formControl">
-        <span className="form-icon">
-          <img src={userIcon} alt="email icon" />
-        </span>
-        <input
-          type="text"
-          name="lastname"
-          placeholder="Lastname"
-          value={this.state.lastName}
-          onChange={this.onInputFieldChangeHandler}
-          required
-        />
-
       </div>
       <div className="formControl">
         <span className="form-icon">
@@ -173,19 +133,12 @@ render() {
         />
       </div>
       <div className="formBtn">
-        <button>
-          {!this.props.signupProcessing && 'Signup'}
-          <ClipLoader
-          css=''
-          sizeUnit="100px"
-          size={150}
-          color={'#123abc'}
-          loading={this.props.signupProcessing}
-        />
-        </button>
+      <button>
+      Signin
+    </button>
       </div>
       <div className="formText">
-        <p>Already have an account? <Link to="/signin">Signin</Link></p>
+        <p>Don't have an account? <Link to="/signup">Signup</Link></p>
       </div>
     </form>
   </AuthContainer>
@@ -193,4 +146,4 @@ render() {
 }
 }
 
-export default withToastManager(Signup);
+export default withToastManager(Signin);

@@ -5,19 +5,24 @@
 	justify-content: center;
 }
 
-.signinForm{
+.signinForm, .signupForm{
 	background-color: #fff;
 	padding: 50px 30px;
 	border-radius: 5px;
 	color: #343A40;
 }
 
-.signinForm .formTitle{
+.signinForm .formTitle, .signupForm .formTitle{
 	margin-bottom: 40px;
 	text-align: center;
 }
 
-.signinForm .formControl{
+.formTitle a {
+	text-decoration: none;
+	color: #343A40;
+}
+
+.signinForm .formControl, .signupForm .formControl{
 	width: 350px;
 	background: #fff;
 	display: inherit;
@@ -29,7 +34,7 @@
 	margin-bottom: 10px;
 }
 
-.signinForm .formControl:nth-child(1){
+.signinForm .formControl:nth-child(1), .signupForm .formControl:nth-child(1){
 	margin-bottom: 50px;
 }
 
@@ -44,17 +49,17 @@
 	width: 15px;
 }
 
-.signinForm .formBtn{
+.signinForm .formBtn, .signupForm .formBtn{
 	width: 100%;
 	text-align: center;
 	margin-bottom: 20px;
 }
 
-.signinForm .formControl input:focus{
+.signinForm .formControl input:focus, .signupForm .formControl input:focus{
 	outline: none;
 }
 
-.signinForm .formBtn button{
+.signinForm .formBtn button, .signupForm .formBtn button{
 	width: 100%;
 	background: #C12302;
 	color: #fff;
@@ -65,6 +70,6 @@
 	border-radius: 10px;
 }
 
-.signinForm .formText, .signinForm p{
+.signinForm .formText, .signinForm p, .signupForm .formText, .signupForm p{
 	font-size: 0.8em;
 }

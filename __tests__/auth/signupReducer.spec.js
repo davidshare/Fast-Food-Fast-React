@@ -35,8 +35,8 @@ describe('Signup Reducer', () => {
     () => {
       const payload = {
         response: {
-          response: {
-            data: { message: 'Sorry could not create article' },
+          signupResponse: {
+            data: { message: 'Sorry could not create the account' },
           },
         },
       };
@@ -47,8 +47,8 @@ describe('Signup Reducer', () => {
         stateUpdateHelper(defaultState, {
           signupProcessing: false,
           signupError: true,
-          signupSuccess: true,
-          response: payload,
+          signupSuccess: false,
+          signupResponse: payload,
         }),
       );
     });
