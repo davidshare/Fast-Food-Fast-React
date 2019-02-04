@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Aux from '../aux';
-import Nav from '../../nav/nav';
+import Nav from '../../Nav/Nav';
 
 const Layout = props => (
   <Aux>
