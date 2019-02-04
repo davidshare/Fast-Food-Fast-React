@@ -1,0 +1,46 @@
+#mealCard{
+  width: 22%;
+  height: 310px;
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.mealImage{
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.mealImage img{
+  width: 100%;
+}
+
+.mealContent{
+  padding: 20px;
+}
+
+.mealName{
+  font-weight: bold;
+}
+
+.mealContent button {
+  padding: 5px 10px;
+  font-size: 1em;
+  color: #fff;
+  background: #800000;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.mealContent button:hover{
+  background: #fff;
+  border: 1px solid #800000;
+  color: #800000;
+  cursor: pointer;
+}
+
+.mealPrice{
+  margin-left: 10px;
+}

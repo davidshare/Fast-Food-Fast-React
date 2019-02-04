@@ -6,7 +6,7 @@
 Fast-Food-Fast is a food delivery service app for a restaurant. A user can create an account, signin to the account and make orders for food items. It consumes the Fast-Food-Fast api on https://github.com/davidshare/Fast-Food-Fast.
 
 ## UI hosted on Heroku
-* https://fff-react-staging.herokuapp.com/signin
+* https://fff-react-staging.herokuapp.com
 
 ## Server side hosted on Heroku
 

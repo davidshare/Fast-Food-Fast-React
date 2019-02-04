@@ -9,6 +9,7 @@ import Aux from './hoc/aux';
 import store from '../store/store';
 import Signin from '../containers/authContainers/SigninContainer';
 import Signup from '../containers/authContainers/signupContainer';
+import ViewMenu from '../containers/menu/ViewMenuContainer';
 
 /**
  * @descrption The App class component for rendering the app
@@ -28,6 +29,7 @@ class App extends Component {
             <Route exact path='/' component={LandingPage}/>
             <Route exact path='/signup' component={Signup}/>
             <Route exact path='/signin' component={Signin}/>
+            <Route exact path='/menu' component={ViewMenu}/>
           </Switch>
         </BrowserRouter>
       </Aux>
