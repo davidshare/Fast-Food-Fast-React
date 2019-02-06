@@ -1,0 +1,15 @@
+.pageHeader{
+  width:100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/food photo.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  z-index: -2;
+}
+
+.pageHeader .pageTitle{
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 6%;
+}

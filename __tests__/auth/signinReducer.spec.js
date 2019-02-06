@@ -1,5 +1,5 @@
 import signinReducer, {
-  initialState as defaultState,
+  initialState as defaultState, authenticateUser, signOutUser,
 } from '../../src/reducers/authReducers/signinReducer';
 import * as authActionTypes
   from '../../src/actions/authActions/authActionTypes';
@@ -16,6 +16,26 @@ describe('Signin Reducer', () => {
       );
     });
 
+  it(`should update state when ${authActionTypes.AUTHENTICATE} is triggered`,
+    () => {
+      expect(authenticateUser(defaultState,
+        { type: authActionTypes.AUTHENTICATE })).toEqual(
+        stateUpdateHelper(defaultState, {
+          authenticated: true,
+        }),
+      );
+    });
+
+  it(`should update state when ${authActionTypes.SIGNOUT} is triggered`,
+    () => {
+      expect(signOutUser(defaultState,
+        { type: authActionTypes.SIGNOUT })).toEqual(
+        stateUpdateHelper(defaultState, {
+          authenticated: false,
+        }),
+      );
+    });
+
   it(`should update state when ${authActionTypes.SIGNIN_SUCCESS} is triggered`,
     () => {
       expect(signinReducer(
@@ -27,6 +47,7 @@ describe('Signin Reducer', () => {
           signinError: false,
           signinResponse: 'success',
           signinSuccess: true,
+          authenticated: true,
         }),
       );
     });
@@ -49,6 +70,38 @@ describe('Signin Reducer', () => {
           signinError: true,
           signinSuccess: false,
           signinResponse: payload,
+        }),
+      );
+    });
+
+  it(`should update state when ${authActionTypes.SIGNOUT} is triggered`,
+    () => {
+      expect(signinReducer(
+        defaultState,
+        { type: authActionTypes.SIGNOUT },
+      )).toEqual(
+        stateUpdateHelper(defaultState, {
+          signinProcessing: false,
+          signinError: false,
+          signinResponse: null,
+          signinSuccess: false,
+          authenticated: false,
+        }),
+      );
+    });
+
+  it(`should update state when ${authActionTypes.AUTHENTICATE} is triggered`,
+    () => {
+      expect(signinReducer(
+        defaultState,
+        { type: authActionTypes.AUTHENTICATE },
+      )).toEqual(
+        stateUpdateHelper(defaultState, {
+          signinProcessing: false,
+          signinError: false,
+          signinResponse: null,
+          signinSuccess: false,
+          authenticated: true,
         }),
       );
     });

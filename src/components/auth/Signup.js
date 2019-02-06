@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ClipLoader from 'react-spinners/ClipLoader';
 import { withToastManager } from 'react-toast-notifications';
 import { Link } from 'react-router-dom';
 
@@ -175,13 +174,6 @@ render() {
       <div className="formBtn">
         <button>
           {!this.props.signupProcessing && 'Signup'}
-          <ClipLoader
-          css=''
-          sizeUnit="100px"
-          size={150}
-          color={'#123abc'}
-          loading={this.props.signupProcessing}
-        />
         </button>
       </div>
       <div className="formText">

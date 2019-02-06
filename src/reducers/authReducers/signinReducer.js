@@ -2,6 +2,8 @@ import {
   START_SIGNIN,
   SIGNIN_SUCCESS,
   SIGNIN_FAILURE,
+  AUTHENTICATE,
+  SIGNOUT,
 } from '../../actions/authActions/authActionTypes';
 import stateUpdateHelper from '../../helpers/updateStateHelper';
 
@@ -10,6 +12,7 @@ export const initialState = {
   signinResponse: null,
   signinError: false,
   signinSuccess: false,
+  authenticated: false,
 };
 
 /**
@@ -19,6 +22,24 @@ export const initialState = {
  */
 export const signinStartReducer = state => stateUpdateHelper(state,
   { signinProcessing: true, signinError: false });
+
+/**
+ * @description - function to set authenticated state
+ * @param {object} state
+ * @returns {object} - updated state
+ */
+export const authenticateUser = state => stateUpdateHelper(state,
+  { authenticated: true });
+
+/**
+ * @description - function to signout a user
+ * @param {object} state
+ * @returns {object} - updated state
+ */
+export const signOutUser = (state) => {
+  localStorage.removeItem('token');
+  return stateUpdateHelper(state, { authenticated: false });
+};
 
 /**
  * @description - siginin failure - update the state when called
@@ -33,6 +54,7 @@ export const signinFailureReducer = (
   signinError: true,
   signinSuccess: false,
   signinResponse: action.payload,
+  authenticated: false,
 });
 
 /**
@@ -47,12 +69,17 @@ export const signinSuccessReducer = (
 ) => stateUpdateHelper(state, {
   signinProcessing: false,
   signinSuccess: true,
+  authenticated: true,
   signinResponse: action.payload,
 });
 const signinReducer = (state = initialState, action) => {
   switch (action.type) {
     case START_SIGNIN:
       return signinStartReducer(state);
+    case SIGNOUT:
+      return signOutUser(state);
+    case AUTHENTICATE:
+      return authenticateUser(state);
     case SIGNIN_FAILURE:
       return signinFailureReducer(state, action);
     case SIGNIN_SUCCESS:

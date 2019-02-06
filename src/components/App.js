@@ -10,6 +10,14 @@ import store from '../store/store';
 import Signin from '../containers/authContainers/SigninContainer';
 import Signup from '../containers/authContainers/signupContainer';
 import ViewMenu from '../containers/menu/ViewMenuContainer';
+import Cart from '../containers/cartContainer/CartContainer';
+import { getToken } from '../helpers/authHelpers';
+import { AUTHENTICATE } from '../actions/authActions/authActionTypes';
+import NonAuthenticatedRoutes from
+  './hoc/routeProtection/NonAuthenticatedRoutes';
+
+const user = getToken();
+if (user) store.dispatch({ type: AUTHENTICATE });
 
 /**
  * @descrption The App class component for rendering the app
@@ -27,9 +35,12 @@ class App extends Component {
         <BrowserRouter>
           <Switch>
             <Route exact path='/' component={LandingPage}/>
-            <Route exact path='/signup' component={Signup}/>
-            <Route exact path='/signin' component={Signin}/>
+            <Route exact path='/signup'
+              component={NonAuthenticatedRoutes(Signup)}/>
+            <Route exact path='/signin'
+              component={NonAuthenticatedRoutes(Signin)}/>
             <Route exact path='/menu' component={ViewMenu}/>
+            <Route exact path='/cart' component={Cart}/>
           </Switch>
         </BrowserRouter>
       </Aux>
