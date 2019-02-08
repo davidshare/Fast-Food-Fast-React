@@ -17,3 +17,7 @@ body{
   height: 0;
   visibility: hidden;
 }
+
+.css-1p3cd4g{
+	z-index: 10000;
+}

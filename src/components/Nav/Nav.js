@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import menuIcon from '../../assets/icons/menuIcon.svg';
+
 import NavList from './navList';
 import Brand from './brand';
 import '../../styles/nav.css';
@@ -13,6 +15,11 @@ import { updateCartIcon } from '../../helpers/cartHelper';
 class Nav extends Component {
   static propTypes = {
     children: PropTypes.any,
+  }
+
+  toggleNav = () => {
+    const navList = document.getElementById('navList');
+    navList.classList.toggle('hiddenNav');
   }
 
   componentDidMount = () => {
@@ -37,6 +44,13 @@ class Nav extends Component {
         <Brand />
         <NavList />
         {this.props.children}
+        <div id="iconContainer">
+          <img
+            src={menuIcon} alt="menu icon"
+            className="menuIcon"
+            onClick={this.toggleNav}
+          />
+        </div>
       </nav>
     );
   }
