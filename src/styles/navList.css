@@ -1,10 +1,14 @@
 .navList{
-	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	list-style: none;
+	z-index: 2;
 }
 
 .navList li{
-	display: inline;
-	margin: 0 15px;
+	margin: 0 10px;
+	font-size: 1em;
 }
 
 .navList li a {
@@ -16,12 +20,11 @@
 	color: #fff;
 }
 
-@media (max-width: 700px){
-	.navList li{
-		display: block;
+@media only screen and (max-width: 860px) {
+  .navList{
+		flex-direction: column;
 	}
-
-	.main-nav{
-		display: none;
+	.navList li{
+		margin: 10px 0;
 	}
 }

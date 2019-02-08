@@ -28,3 +28,9 @@
   background: #fff url(../assets/images/searchicon.png) no-repeat;
   background-position: 15px 15px;
 }
+
+@media only screen and (max-width: 860px) {
+  .hero{
+		height: 70vh;
+	}
+}

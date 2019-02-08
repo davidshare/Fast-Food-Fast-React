@@ -11,7 +11,7 @@ import { SIGNOUT } from '../../actions/authActions/authActionTypes';
  * @class NavList
  * @extends {Component}
  */
-class NavList extends Component {
+export class NavList extends Component {
   static propTypes = {
     authenticated: PropTypes.bool,
     dispatch: PropTypes.func,
@@ -36,6 +36,9 @@ class NavList extends Component {
       <li key="home"><Link to="/">Home</Link></li>,
       <li key="about"><Link to="/#about">About</Link></li>,
       <li key="menu"><Link to="menu">Menu</Link></li>,
+    ];
+
+    const cartLink = [
       <li key="cart" className="cart-icon-container">
         <Link to="cart">
           <span className="cart-icon">
@@ -46,10 +49,10 @@ class NavList extends Component {
     ];
 
     if (this.props.authenticated) {
-      return [...authLinks, ...noAuthLinks];
+      return [...authLinks, ...noAuthLinks, ...cartLink];
     }
 
-    return [...noAuthLinks, ...unAuthLinks];
+    return [...noAuthLinks, ...unAuthLinks, ...cartLink];
   }
 
   signOut = () => {
@@ -63,7 +66,7 @@ class NavList extends Component {
  */
   render() {
     return (
-      <ul className="navList">
+      <ul className="navList hiddenNav" id="navList">
       {this.navLinks()}
       </ul>
     );

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import AuthContainer from '../hoc/AuthContainer';
 import '../../styles/authForms.css';
+import Brand from '../Nav/brand';
 import lockIcon from '../../assets/icons/lock.svg';
 import envelopeIcon from '../../assets/icons/envelope.svg';
 import {
@@ -95,13 +96,14 @@ shouldComponentUpdate(nextProps) {
 render() {
   return (
       <AuthContainer imgBackground="signinBackground">
+      <div className="authBrand"><Brand /></div>
     <form
       className="authForm signinForm"
       onSubmit={this.signinHandler}
       id="signinForm"
     >
       <div className="formTitle">
-      <h2><Link to="/">Fast Food Fast</Link></h2>
+      <h2>Signin</h2>
         <p>You can't go hungry when we've got you covered</p>
       </div>
       <div className="formControl">

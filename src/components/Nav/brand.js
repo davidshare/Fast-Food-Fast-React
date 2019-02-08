@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const brand = () => (
   <div className="brand">
-    <h2>Fast-Food-Fast</h2>
+    <Link to='/'><h2>Fast-Food-Fast</h2></Link>
   </div>
 );
 

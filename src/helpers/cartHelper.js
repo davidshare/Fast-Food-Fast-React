@@ -27,7 +27,7 @@ export const addToCart = (item) => {
 };
 
 export const calculateTotalPrice = (cart) => {
-  if (!cart || cart.length < 1) return 0;
+  if (!cart || Object.keys(cart).length < 1) return 0;
   const totalPrice = Object.keys(cart)
     .map(meal => parseInt(cart[meal].mealPrice, 10)
     * parseInt(cart[meal].quantity, 10))
@@ -79,6 +79,7 @@ export const removeItem = (item) => {
 };
 
 export const updateCartIcon = () => {
+  console.log('value >>>>>>>>>>>', document.getElementById);
   const value = document.getElementById('cart-count');
   value.innerHTML = getCart() ? Object.keys(getCart()).length : 0;
   return true;
